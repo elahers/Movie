@@ -1,0 +1,12 @@
+﻿@model  Cinema.Models.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "user login";
+}
+<form method="post">
+    <input asp-for="mail" class="form-group" />
+    <input asp-for="password" class="form-group" />
+    <input type="checkbox" asp-for="RememberMe" />
+    <button type="submit">Login</button>
+
+
+</form>
