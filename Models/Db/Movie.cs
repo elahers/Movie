@@ -10,28 +10,23 @@ namespace Cinema.Models.Db
 {
     public class Movie
     {
-        [Column("MovieId")]
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Required]
         public int Id { get; set; }
-        [Column("Name")]
+        
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
-        [Column("Genere")]
+        
         [Required]
         [StringLength(50)]
-        public String Genre { get; set; }
-        [Column("Duration")]
+        public string Genre { get; set; }
+        
         [Required]
         public int Duration { get; set; }
-        [Column("Summary")]
+        
         [Required]
-        [Text]
         public string Summary { get; set; }
 
-        [ForeignKey("ImageID")]
+        public int ImageId { get; set; }
         public virtual Image Image { get; set; }
        
     }

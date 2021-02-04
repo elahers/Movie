@@ -9,21 +9,18 @@ namespace Cinema.Models.Db
 {
     public class Cinemaa
     {
-        [Column("CinemaId")]
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
         public int Id { get; set; }
-        [Column("CinemaType")]
+        
         [StringLength(50)]
         [Required]
         public String Type { get; set; }
-        [Column("CinemaName")]
+        
         [StringLength(50)]
         [Required]
         public String Name { get; set; }
-        [ForeignKey("MovieId")]
-        public List<Movie> movies { get; set; }
+        
+        public ICollection<Movie> Movies { get; set; }
 
     }
 }
