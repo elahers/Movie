@@ -15,11 +15,11 @@ namespace Cinema.Data
         {
         }
 
-        public DbSet<Cinemaa> cinemaas { get; set; }
-        public DbSet<User> users { get; set; }
-
-        public DbSet<Movie> movies { get; set; }
-        public DbSet<Image> images { get; set; }
+        public DbSet<Models.Db.Cinema> Cinemas { get; set; }
+        public DbSet<User> Users { get; set; }
+        
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<Image> Images { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

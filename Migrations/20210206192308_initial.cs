@@ -47,7 +47,7 @@ namespace Cinema.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "cinemaas",
+                name: "Cinemaas",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -57,11 +57,11 @@ namespace Cinema.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_cinemaas", x => x.Id);
+                    table.PrimaryKey("PK_Cinemaas", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "images",
+                name: "Images",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -70,11 +70,11 @@ namespace Cinema.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_images", x => x.Id);
+                    table.PrimaryKey("PK_Images", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "users",
+                name: "Users",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -89,7 +89,7 @@ namespace Cinema.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_users", x => x.Id);
+                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -199,7 +199,7 @@ namespace Cinema.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "movies",
+                name: "Movies",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -213,17 +213,17 @@ namespace Cinema.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_movies", x => x.Id);
+                    table.PrimaryKey("PK_Movies", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_movies_cinemaas_CinemaaId",
+                        name: "FK_Movies_Cinemaas_CinemaaId",
                         column: x => x.CinemaaId,
-                        principalTable: "cinemaas",
+                        principalTable: "Cinemaas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_movies_images_ImageId",
+                        name: "FK_Movies_Images_ImageId",
                         column: x => x.ImageId,
-                        principalTable: "images",
+                        principalTable: "Images",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -268,13 +268,13 @@ namespace Cinema.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_movies_CinemaaId",
-                table: "movies",
+                name: "IX_Movies_CinemaaId",
+                table: "Movies",
                 column: "CinemaaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_movies_ImageId",
-                table: "movies",
+                name: "IX_Movies_ImageId",
+                table: "Movies",
                 column: "ImageId");
         }
 
@@ -296,10 +296,10 @@ namespace Cinema.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "movies");
+                name: "Movies");
 
             migrationBuilder.DropTable(
-                name: "users");
+                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -308,10 +308,10 @@ namespace Cinema.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "cinemaas");
+                name: "Cinemaas");
 
             migrationBuilder.DropTable(
-                name: "images");
+                name: "Images");
         }
     }
 }

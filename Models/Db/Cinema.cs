@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace Cinema.Models.Db
 {
-    public class Cinemaa
+    public class Cinema
     {
         [Required]
         public int Id { get; set; }
         
         [StringLength(50)]
         [Required]
-        public String Type { get; set; }
+        public string Type { get; set; }
         
         [StringLength(50)]
         [Required]
-        public String Name { get; set; }
+        public string Name { get; set; }
         
         public ICollection<Movie> Movies { get; set; }
 

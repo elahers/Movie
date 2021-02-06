@@ -14,5 +14,7 @@ namespace Cinema.Models.Db
         [Required]
         [StringLength(50)]
         public string Url { get; set; }
+        
+        public virtual ICollection<Movie> Movies { get; set; }
     }
 }

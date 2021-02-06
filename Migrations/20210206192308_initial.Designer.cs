@@ -4,14 +4,16 @@ using Cinema.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Cinema.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210206192308_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -19,7 +21,7 @@ namespace Cinema.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Cinema.Models.Db.Cinema", b =>
+            modelBuilder.Entity("Cinema.Models.Db.Cinemaa", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -38,7 +40,7 @@ namespace Cinema.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cinemas");
+                    b.ToTable("Cinemaas");
                 });
 
             modelBuilder.Entity("Cinema.Models.Db.Image", b =>
@@ -65,7 +67,7 @@ namespace Cinema.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CinemaId")
+                    b.Property<int?>("CinemaaId")
                         .HasColumnType("int");
 
                     b.Property<int>("Duration")
@@ -90,7 +92,7 @@ namespace Cinema.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CinemaId");
+                    b.HasIndex("CinemaaId");
 
                     b.HasIndex("ImageId");
 
@@ -343,14 +345,12 @@ namespace Cinema.Migrations
 
             modelBuilder.Entity("Cinema.Models.Db.Movie", b =>
                 {
-                    b.HasOne("Cinema.Models.Db.Cinema", "Cinema")
+                    b.HasOne("Cinema.Models.Db.Cinemaa", null)
                         .WithMany("Movies")
-                        .HasForeignKey("CinemaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CinemaaId");
 
                     b.HasOne("Cinema.Models.Db.Image", "Image")
-                        .WithMany("Movies")
+                        .WithMany()
                         .HasForeignKey("ImageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

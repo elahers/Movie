@@ -28,6 +28,9 @@ namespace Cinema.Models.Db
 
         public int ImageId { get; set; }
         public virtual Image Image { get; set; }
+        
+        public int CinemaId { get; set; }
+        public virtual Cinema Cinema { get; set; }
        
     }
 }
