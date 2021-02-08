@@ -2,10 +2,10 @@
 @{
     ViewBag.Title = "user login";
 }
-<form method="post">
-    <input asp-for="mail" class="form-group" />
-    <input asp-for="password" class="form-group" />
-    <input type="checkbox" asp-for="RememberMe" />
+<form method="post" style="background-color: #7abaff; padding: 20px" asp-action="Login">
+    <input asp-for="mail" type="email" class="form-group"/>
+    <input asp-for="password" type="password" class="form-group"/>
+    <input type="checkbox" asp-for="RememberMe"/>
     <button type="submit">Login</button>
 
 

@@ -10,7 +10,7 @@ namespace Cinema.Models.ViewModels
     public class RegisterViewModel
     {
         [Required(ErrorMessage = "enter your First name")]
-        [Display(Name="FirstName")]
+        [Display(Name = "FirstName")]
         public string FirstName { get; set; }
 
 
@@ -28,15 +28,16 @@ namespace Cinema.Models.ViewModels
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name ="Confirm Password")]
-        [Compare("Password",ErrorMessage = "password and confirmation must be same!!!")]
+        [Display(Name = "Confirm Password")]
+        [Compare("Password", ErrorMessage = "password and confirmation must be same!!!")]
         public string ConfirmPassword { get; set; }
 
         public string Gender { get; set; }
 
-        [Required(ErrorMessage = "enter your number")]
+        [Required(ErrorMessage = "enter your phonenumber")]
         [Display(Name = "number")]
         public string MobileNumber { get; set; }
+
         public DateTime Birthday { get; set; }
     }
 }
